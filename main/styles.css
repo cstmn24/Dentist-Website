@@ -123,6 +123,7 @@ p {
     padding: 5px 0;
     margin: 0;
     height: 30px;
+    overflow: hidden;
 }
 
 .location-link {
@@ -131,6 +132,7 @@ p {
     font-size: 0.9rem;
     float: right;
     color: #333333;
+    overflow: hidden;
 }
 
 .navbar {
@@ -255,6 +257,7 @@ p {
     width: 100%;
     position: relative;
     overflow: hidden;
+    
 }
 
 .carousel-inner {
@@ -266,8 +269,8 @@ p {
 
 .carousel-inner img {
     min-width: 100%;
-    height: 100%;
-    object-fit: cover;
+    min-height: 100%;
+    object-fit:cover;
     transition: transform 0.3s ease;
 }
 
@@ -280,8 +283,8 @@ p {
     position: absolute;
     top: 50%;
     transform: translateY(-50%);
-    background: rgba(255, 255, 255, 0.2);
-    color: white;
+    background: rgba(255, 255, 255, 0.623);
+    color: var(--text-light);
     padding: 20px;
     border: none;
     cursor: pointer;
@@ -298,7 +301,7 @@ p {
 
 .carousel-prev:hover,
 .carousel-next:hover {
-    background: rgba(255, 255, 255, 0.3);
+    background: rgba(255, 255, 255, 0.527);
     transform: translateY(-50%) scale(1.1);
 }
 
@@ -316,7 +319,7 @@ p {
     left: 0;
     right: 0;
     padding: 40px;
-    background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent);
+    /* background: linear-gradient(to top, rgba(0, 0, 0, 0.7), transparent); */
     color: white;
     text-align: center;
 }
@@ -486,7 +489,7 @@ p {
     font-size: 3rem;
     color: var(--primary);
     text-align: center;
-    margin-bottom: 0.7rem;
+    margin-bottom: 0.8rem;
     font-weight: 700;
     position: relative;
 }
@@ -1933,6 +1936,7 @@ footer {
 } */
 
 @media screen and (max-width: 768px) {
+    
     .nav-links {
         display: none;
         flex-direction: column;
@@ -2018,6 +2022,7 @@ footer {
 }
 
 @media screen and (max-width: 480px) {
+    
     .container {
         padding: 0 10px;
     }
