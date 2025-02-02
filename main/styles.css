@@ -760,7 +760,7 @@ p {
 }
 
 .card-image {
-    flex: 0 0 300px;
+    flex: 0 0 375px;
     position: relative;
     overflow: hidden;
 }
@@ -777,7 +777,7 @@ p {
 }
 
 .dentist-card-content {
-    flex: 1;
+    flex: 2;
     padding: 30px;
 }
 
