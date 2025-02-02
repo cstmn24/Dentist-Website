@@ -760,7 +760,7 @@ p {
 }
 
 .card-image {
-    flex: 0 0 375px;
+    flex: 0 0 450px;
     position: relative;
     overflow: hidden;
 }
