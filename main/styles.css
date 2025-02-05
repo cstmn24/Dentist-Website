@@ -584,14 +584,56 @@ p {
 }
 
 .services-card.c {
-    background-image: url(/Pictures/Services/perio.jpg);
+    background-image: url(/Pictures/Services/implants.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
 }
 
 .services-card.d {
-    background-image: url(/Pictures/Services/implants.jpg);
+    background-image: url(/Pictures/Services/Laser_Dentistry.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.services-card.e {
+    background-image: url(/Pictures/Services/Periodontics.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.services-card.f {
+    background-image: url(/Pictures/Services/EndoMicroscope2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.services-card.g {
+    background-image: url(/Pictures/Services/Orthodontics.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.services-card.h {
+    background-image: url(/Pictures/Services/Pedodontics_2.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.services-card.i {
+    background-image: url(/Pictures/Services/Oral_surgery.jpg);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.services-card.j {
+    background-image: url(/Pictures/Services/Prosthodontics_2.jpg);
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
@@ -718,7 +760,7 @@ p {
 }
 
 .card-image {
-    flex: 0 0 300px;
+    flex: 0 0 450px;
     position: relative;
     overflow: hidden;
 }
@@ -735,7 +777,7 @@ p {
 }
 
 .dentist-card-content {
-    flex: 1;
+    flex: 2;
     padding: 30px;
 }
 
