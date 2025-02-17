@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>3D Card-Style Carousel (Smooth Slide-In)</title>
+  <style>
+    /* Basic Reset */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    html, body {
+      width: 100%;
+      height: 100%;
+      font-family: Arial, sans-serif;
+      background: #f0f0f0;
+    }
+    /* Carousel Container: covers full screen, center content */
+    .carousel-container {
+      position: relative;
+      width: 100%;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      perspective: 1200px; /* for 3D effect */
+    }
+    /* Track that holds the carousel items */
+    .carousel-track {
+      position: relative;
+      width: 80%;
+      max-width: 1000px;
+      height: 70vh;
+      max-height: 700px;
+      margin: 0 auto;
+      transform-style: preserve-3d; /* 3D children */
+    }
+    /* Each carousel item (card) */
+    .carousel-item {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      width: 300px;
+      height: 450px;
+      transform-style: preserve-3d;
+      border-radius: 10px;
+      overflow: hidden;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.2);
+      /* Smooth, cinematic transitions */
+      transition: transform 1.5s ease-in-out, opacity 1.5s ease-in-out;
+    }
+    /* The images themselves */
+    .carousel-item img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+      display: block;
+    }
+    /* Navigation Buttons */
+    .carousel-button {
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      background-color: rgba(0, 0, 0, 0.6);
+      color: #fff;
+      border: none;
+      padding: 1rem 1.5rem;
+      font-size: 1.5rem;
+      cursor: pointer;
+      border-radius: 50%;
+      z-index: 10;
+      transition: background-color 0.3s;
+    }
+    .carousel-button:hover {
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+    .prev-button {
+      left: 5%;
+    }
+    .next-button {
+      right: 5%;
+    }
+    /* Responsive tweaks */
+    @media (max-width: 768px) {
+      .carousel-item {
+        width: 220px;
+        height: 330px;
+      }
+    }
+    @media (max-width: 480px) {
+      .carousel-item {
+        width: 180px;
+        height: 270px;
+      }
+      .carousel-button {
+        padding: 0.75rem 1rem;
+        font-size: 1.2rem;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="carousel-container">
+    <!-- Carousel Track -->
+    <div class="carousel-track" id="carouselTrack"></div>
+    <!-- Navigation Buttons -->
+    <button class="carousel-button prev-button" onclick="prevSlide()">&#10094;</button>
+    <button class="carousel-button next-button" onclick="nextSlide()">&#10095;</button>
+  </div>
+
+  <script>
+    // List your image URLs here
+    const images = [
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-15%20at%208.47.33%E2%80%AFPM-OF4dXEXJKHX1P9I4q9cWfzhA0zj3d3.png',
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-15%20at%208.47.33%E2%80%AFPM-OF4dXEXJKHX1P9I4q9cWfzhA0zj3d3.png',
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-15%20at%208.47.33%E2%80%AFPM-OF4dXEXJKHX1P9I4q9cWfzhA0zj3d3.png',
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-15%20at%208.47.33%E2%80%AFPM-OF4dXEXJKHX1P9I4q9cWfzhA0zj3d3.png',
+      'https://hebbkx1anhila5yf.public.blob.vercel-storage.com/Screenshot%202025-02-15%20at%208.47.33%E2%80%AFPM-OF4dXEXJKHX1P9I4q9cWfzhA0zj3d3.png'
+    ];
+
+    let currentIndex = 0;
+    const track = document.getElementById('carouselTrack');
+    const carouselItems = [];
+
+    // Create all carousel items once
+    function createCarouselItems() {
+      images.forEach((src, i) => {
+        const item = document.createElement('div');
+        item.classList.add('carousel-item');
+
+        const img = document.createElement('img');
+        img.src = src;
+        item.appendChild(img);
+
+        // Append the item and store a reference for updates
+        track.appendChild(item);
+        carouselItems.push(item);
+      });
+    }
+
+    // Update the transform of each carousel item based on currentIndex
+    function updateCarousel() {
+      carouselItems.forEach((item, i) => {
+        const offset = i - currentIndex;
+        // Optionally hide items that are far away
+        if (offset < -2 || offset > 2) {
+          item.style.display = 'none';
+          return;
+        } else {
+          item.style.display = 'block';
+        }
+
+        const absOffset = Math.abs(offset);
+        const scale = 1 - absOffset * 0.2;
+        // Increase horizontal spacing for a more dramatic slide
+        const translateX = offset * 500;
+        const rotateY = offset * 15;         // slight rotation for 3D effect
+        const translateZ = -absOffset * 100;   // push further behind
+        const opacity = absOffset === 2 ? 0.5 : 1;
+        const zIndex = 999 - absOffset;        // center is on top
+
+        item.style.transform = `
+          translate(-50%, -50%)
+          translateX(${translateX}px)
+          translateZ(${translateZ}px)
+          rotateY(${rotateY}deg)
+          scale(${scale})
+        `;
+        item.style.opacity = opacity;
+        item.style.zIndex = zIndex;
+      });
+    }
+
+    // Navigation functions
+    function prevSlide() {
+      currentIndex = (currentIndex <= 0) ? images.length - 1 : currentIndex - 1;
+      updateCarousel();
+    }
+    function nextSlide() {
+      currentIndex = (currentIndex >= images.length - 1) ? 0 : currentIndex + 1;
+      updateCarousel();
+    }
+
+    // Initialize carousel on page load
+    window.addEventListener('DOMContentLoaded', () => {
+      createCarouselItems();
+      updateCarousel();
+    });
+
+    // Optional: Uncomment to enable auto-play every 5 seconds
+    // setInterval(nextSlide, 5000);
+  </script>
+</body>
+</html>
