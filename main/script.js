@@ -66,11 +66,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 const images = [
-    '/Pictures/gallery/gallery_1.JPG',
-    '/Pictures/gallery/gallery_2.JPG',
-    '/Pictures/gallery/gallery_3.JPG',
-    '/Pictures/gallery/gallery_4.JPG',
-    '/Pictures/gallery/gallery_5.JPG',
+    '../Pictures/gallery/gallery_1.JPG',
+    '../Pictures/gallery/gallery_2.JPG',
+    '../Pictures/gallery/gallery_3.JPG',
+    '../Pictures/gallery/gallery_4.JPG',
+    '../Pictures/gallery/gallery_5.JPG',
     '/Pictures/gallery/gallery_6.JPG',
     '/Pictures/gallery/gallery_7.JPG',
     '/Pictures/gallery/gallery_8.JPG',
