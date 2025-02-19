@@ -847,7 +847,7 @@ p {
 
 .dentists {
     padding: 60px 20px;
-    background-color: var(--accent-color);
+    background-color: var(--primary-color);
     min-height: 100vh;
 }
 
@@ -1283,7 +1283,8 @@ p {
     font-size: 3rem;
     color: var(--text-color);
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1rem;
+    margin-top: 1rem;
     font-weight: 700;
     position: relative;
 }
