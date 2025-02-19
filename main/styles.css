@@ -1316,8 +1316,8 @@ p {
     position: absolute;
     top: 50%;
     left: 50%;
-    width: 430px;
-    height: 570px;
+    width: 380px;
+    height: 520px;
     transform-style: preserve-3d;
     border-radius: 10px;
     overflow: hidden;
