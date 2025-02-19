@@ -987,6 +987,9 @@ p {
     .dentist-card {
         flex-direction: column;
     }
+    .dentists .container h2 {
+        font-size: 1.8rem;
+    }
 
     .card-image {
         flex: 0 0 auto;
@@ -1008,6 +1011,9 @@ p {
 
     .container h2 {
         margin-bottom: 30px;
+    }
+    .dentists .container h2 {
+        font-size: 1.8rem;
     }
 
     .dentist-cards {
@@ -1215,7 +1221,7 @@ p {
     }
 
     .section-title {
-        font-size: 2.5rem;
+        font-size: 1.8rem;
     }
 }
 
@@ -1238,7 +1244,7 @@ p {
     }
 
     .section-title {
-        font-size: 2rem;
+        font-size: 1.8rem;
     }
 }
 
@@ -1274,8 +1280,8 @@ p {
     justify-content: center;
     align-items: center;
     overflow: hidden;
-    padding-top: 3rem;
-    padding-bottom: 5rem;
+    padding-top: 1rem;
+    padding-bottom: 1rem;
     margin-top: 1rem;
 
 }
@@ -1284,8 +1290,8 @@ p {
     font-size: 3rem;
     color: var(--text-color);
     text-align: center;
-    margin-bottom: 1rem;
-    margin-top: 1rem;
+    /* margin-bottom: 1rem;
+    margin-top: 1rem; */
     font-weight: 700;
     position: relative;
 }
@@ -1362,6 +1368,12 @@ p {
       width: 220px;
       height: 330px;
     }
+    .gallery-carousel-container {
+        height: 50vh;
+      }
+      .gallery-section-title {
+        font-size: 1.8rem;
+      }
   }
   @media (max-width: 480px) {
     .gallery-carousel-item {
@@ -1372,6 +1384,12 @@ p {
       padding: 0.75rem 1rem;
       font-size: 1.2rem;
     }
+    .gallery-carousel-container {
+        height: 50vh;
+      }
+    .gallery-section-title {
+        font-size: 1.8rem;
+      }
   }
 
 
