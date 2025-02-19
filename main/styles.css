@@ -723,14 +723,13 @@ p {
     padding: 2rem;
     background: #f9f9f9;
     text-align: center;
-    font-family: Arial, sans-serif;
-    height: 60vh; 
+    height: 75vh; 
     background-color: var(--background-light); 
   }
   
   .testimonials h2 {
     margin-bottom: 1.5rem;
-    font-size: 2rem;
+    font-size: 3rem;
     color: #333;
   }
   
@@ -803,10 +802,11 @@ p {
   @media (max-width: 768px) {
     .testimonials {
       padding: 1.5rem;
+      height: 50vh;
     }
     
     .testimonials h2 {
-      font-size: 1.75rem;
+      font-size: 1.8rem;
     }
     
     .testimonials-card {
@@ -821,7 +821,7 @@ p {
     }
     
     .testimonials h2 {
-      font-size: 1.5rem;
+      font-size: 1.8rem;
     }
     
     .testimonials-card {
@@ -870,7 +870,7 @@ p {
     font-size: 3rem;
     color: var(--primary);
     text-align: center;
-    margin-bottom: 3rem;
+    margin-bottom: 1.5rem;
     font-weight: 700;
     position: relative;
     width: 100%;
@@ -988,7 +988,7 @@ p {
         flex-direction: column;
     }
     .dentists .container h2 {
-        font-size: 1.8rem;
+        font-size: 3rem;
     }
 
     .card-image {
@@ -1282,7 +1282,7 @@ p {
     overflow: hidden;
     padding-top: 1rem;
     padding-bottom: 1rem;
-    margin-top: 1rem;
+    
 
 }
 
@@ -1369,7 +1369,7 @@ p {
       height: 330px;
     }
     .gallery-carousel-container {
-        height: 50vh;
+        height: 40vh;
       }
       .gallery-section-title {
         font-size: 1.8rem;
@@ -1385,7 +1385,7 @@ p {
       font-size: 1.2rem;
     }
     .gallery-carousel-container {
-        height: 50vh;
+        height: 40vh;
       }
     .gallery-section-title {
         font-size: 1.8rem;
