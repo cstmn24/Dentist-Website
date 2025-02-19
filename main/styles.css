@@ -1365,11 +1365,11 @@ p {
 
   @media (max-width: 768px) {
     .gallery-carousel-item {
-      width: 220px;
-      height: 330px;
+      width: 300px;
+      height: 410px;
     }
     .gallery-carousel-container {
-        height: 40vh;
+        height: 60vh;
       }
       .gallery-section-title {
         font-size: 1.8rem;
@@ -1377,15 +1377,15 @@ p {
   }
   @media (max-width: 480px) {
     .gallery-carousel-item {
-      width: 180px;
-      height: 270px;
+      width: 280px;
+      height: 400px;
     }
     .gallery-carousel-button {
       padding: 0.75rem 1rem;
       font-size: 1.2rem;
     }
     .gallery-carousel-container {
-        height: 40vh;
+        height: 60vh;
       }
     .gallery-section-title {
         font-size: 1.8rem;
