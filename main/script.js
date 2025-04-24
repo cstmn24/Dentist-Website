@@ -61,6 +61,35 @@ document.addEventListener('DOMContentLoaded', function() {
 
 
 
+const carousel = document.getElementById('carousel');
+const cards = carousel.querySelectorAll('.carousel-card');
+const dotsContainer = document.getElementById('dots');
+
+// Create dots dynamically
+cards.forEach((_, idx) => {
+  const dot = document.createElement('span');
+  dot.classList.add('dot');
+  if (idx === 0) dot.classList.add('active');
+  dot.addEventListener('click', () => {
+    cards[idx].scrollIntoView({ behavior: 'smooth', inline: 'center' });
+  });
+  dotsContainer.appendChild(dot);
+});
+
+const dots = dotsContainer.querySelectorAll('.dot');
+
+// Update active dot on scroll
+carousel.addEventListener('scroll', () => {
+  const scrollLeft = carousel.scrollLeft;
+  const cardWidth = cards[0].offsetWidth + 16; // Adjust gap if needed
+  const activeIndex = Math.round(scrollLeft / cardWidth);
+
+  dots.forEach(dot => dot.classList.remove('active'));
+  if (dots[activeIndex]) dots[activeIndex].classList.add('active');
+});
+
+
+
 
 
 
