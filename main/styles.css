@@ -1904,10 +1904,18 @@ iframe {
 
 
 
+@media screen and (max-width: 1175px){
+    .hover-link {
+        font-size: 0.8rem;
+        padding: 0.4rem;
+    }
+    .nav-links.li.a{
+        font-size: 0.8;
+    }
+}
 
 
-
-@media screen and (max-width: 768px) {
+@media screen and (max-width: 1020px) {
     
     .nav-links {
         display: none;
